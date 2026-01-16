@@ -1,7 +1,9 @@
-scikit-learn==1.2.2
-sklearn-features==0.0.2
-imblearn
+numpy
+pandas
 matplotlib
 seaborn
-mlflow==2.11.3
-xgboost
+scikit-learn
+imbalanced-learn
+mlflow
+pyyaml
+pytest

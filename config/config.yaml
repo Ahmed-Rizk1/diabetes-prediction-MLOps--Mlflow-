@@ -1,0 +1,29 @@
+project_name: "bank_churn_prediction"
+version: "1.0.0"
+
+paths:
+  raw_data: "data/raw/dataset.csv"
+  processed_data: "data/processed/"
+  artifacts: "models/"
+  plots: "reports/figures/"
+
+data:
+  target: "Exited"
+  drop_columns: ["RowNumber", "CustomerId", "Surname"]
+  test_size: 0.2
+  random_state: 45
+  stratify: true
+
+preprocessing:
+  numeric_features: ["Age", "CreditScore", "Balance", "EstimatedSalary"]
+  categorical_features: ["Gender", "Geography"]
+  age_threshold: 80
+  smote_strategy: 0.7
+
+training:
+  n_estimators: 350
+  max_depth: 15
+  random_state: 45
+
+mlflow:
+  experiment_name: "churn-detection"
